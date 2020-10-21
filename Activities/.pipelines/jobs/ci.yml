@@ -23,6 +23,10 @@ jobs:
     demands: ${{ parameters.Demands }}
 
   steps:
+  - powershell: |
+      Write-Host "##vso[build.keepForever]true"
+    displayName: "test keepForever"
+
   - template: "../steps/pre_build.yml"
     parameters:
       rootPath:         ${{ parameters.rootPath }}
